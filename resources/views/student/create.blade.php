@@ -1,7 +1,7 @@
 <html>
     <body>
     <h3>Please fill in your details</h3>
-        <form method="get" action="{{url('student')}}">
+        <form method="get" action="createUser">
             <p>Name: <input type="text" name="name"></p> 
             <p>Phone No.: <input type="number" name="phoneNumber"></p> 
             <p>Email: <input type="email" name="email"></p> 

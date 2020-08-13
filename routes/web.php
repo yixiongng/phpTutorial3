@@ -32,4 +32,4 @@ Route::get('/create', function () {
     return view('student.create',['name'=>$name]);
 });
 
-Route::get('student',[\App\Http\Controllers\StudentController::class, 'store']);
+Route::get('createUser',[\App\Http\Controllers\StudentController::class, 'store']);
