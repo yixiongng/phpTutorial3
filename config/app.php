@@ -2,6 +2,10 @@
 
 return [
 
+    'websiteName'   => env('websiteName','My Second Tutorial'),
+    'contactPerson' => env('contactPerson','Ng Yi Xiong'),
+    'contactNumber' => env('contactNumber','+60134721853'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

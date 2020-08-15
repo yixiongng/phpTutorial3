@@ -14,16 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $websiteName =  env('websiteName');
+    $websiteName =  config('app.websiteName');
     return view('home',['websiteName'=>$websiteName]);
 });
 Route::get('/aboutUs', function () {
     return view('aboutUs');
 });
 Route::get('/contactUs', function () {
-    $websiteName =  env('websiteName');
-    $contactPerson =  env('contactPerson');
-    $contactNumber =  env('contactNumber');
+    $websiteName =  config('app.websiteName');
+    $contactPerson =  config('app.contactPerson');
+    $contactNumber =  config('app.contactNumber');
     return view('contactUs',['websiteName'=>$websiteName,'contactPerson'=>$contactPerson,'contactNumber'=>$contactNumber]);
 });
 
