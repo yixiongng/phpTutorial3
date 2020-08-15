@@ -15,7 +15,7 @@
         <form method="get" action="aboutUs">
             <button>About Us</button>
         </form>
-        <form method="get" action="create">
+        <form action="{{ route('student.create') }}" method="get">
             <button>Create User</button>
         </form>
     </body>

@@ -27,9 +27,5 @@ Route::get('/contactUs', function () {
     return view('contactUs',['websiteName'=>$websiteName,'contactPerson'=>$contactPerson,'contactNumber'=>$contactNumber]);
 });
 
-Route::get('/create', function () {
-    $name = '';
-    return view('student.create',['name'=>$name]);
-});
-
-Route::get('createUser',[\App\Http\Controllers\StudentController::class, 'store']);
+Route::get('/createStudent', 'StudentController@create')->name('student.create');
+Route::post('/storeStudent', 'StudentController@store')->name('student.store');
