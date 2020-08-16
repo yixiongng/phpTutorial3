@@ -23,10 +23,8 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $name = '';
-        
-        return view('student.create',['name'=>$name]);
+    {   
+        return view('student.create');
     }
 
     /**
@@ -52,7 +50,7 @@ class StudentController extends Controller
         $phoneNumber   =  $request->get('phoneNumber');
         $email         =  $request->get('email');
         $student->save();
-        return view('student.create',['name'=>$name,'phoneNumber'=>$phoneNumber,'email'=>$email]);
+        return redirect()->route('student.create')->with(['name'=>$name,'phoneNumber'=>$phoneNumber,'email'=>$email]);
     }
 
     /**
