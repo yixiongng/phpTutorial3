@@ -13,6 +13,9 @@
         <form method="get" action="aboutUs">
             <button>About Us</button>
         </form>
+        @if($lastStudentName != NULL)
+            <p>The last registered student is {{$lastStudentName}}</p>
+        @endif
         <form action="{{ route('student.create') }}" method="get">
             <button>Create Student</button>
         </form>

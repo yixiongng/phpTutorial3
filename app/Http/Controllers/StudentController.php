@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Cache;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
+
 use App\Student;
 
 class StudentController extends Controller
@@ -52,6 +53,7 @@ class StudentController extends Controller
         $phoneNumber   =  $request->get('phoneNumber');
         $email         =  $request->get('email');
         $student->save();
+        Cache::set('lastStudent',$student->id);
         return redirect()->route('student.create')->with(['name'=>$name,'phoneNumber'=>$phoneNumber,'email'=>$email]);
     }
 

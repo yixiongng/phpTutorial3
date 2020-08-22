@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
-
+use App\Student;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $lastStudentId = Cache::get('lastStudent');
+        $student = Student::find($lastStudentId);
+        $lastStudentName = $student->name;
         $websiteName =  config('app.websiteName');
-        return view('home',['websiteName'=>$websiteName]);
+        return view('home',['websiteName'=>$websiteName,'lastStudentName'=>$lastStudentName]);
     }
 }
