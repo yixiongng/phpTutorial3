@@ -1,8 +1,6 @@
-<?php
-    /*requirement
-        - create a form for user to fill in 
-    */
-?>
+@extends('layouts.app')
+
+@section('content')
 <html>
     <body>
         <h1>Welcome to <?php echo $websiteName?></h1>
@@ -16,7 +14,11 @@
             <button>About Us</button>
         </form>
         <form action="{{ route('student.create') }}" method="get">
-            <button>Create User</button>
+            <button>Create Student</button>
+        </form>
+        <form action="{{ route('student.index') }}" method="get">
+            <button>Edit Student</button>
         </form>
     </body>
 </html>
+@endsection

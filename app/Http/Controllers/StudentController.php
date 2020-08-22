@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use App\Student;
 
 class StudentController extends Controller
@@ -14,7 +15,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all()->toArray();
+        return view('student.index',compact('students'));
     }
 
     /**
@@ -61,7 +63,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -72,7 +74,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view('student.edit',compact('student','id'));
     }
 
     /**
@@ -84,7 +87,12 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::find($id);
+        $student->name = $request->get('name');
+        $student->phoneNumber = $request->get('phoneNumber');
+        $student->email = $request->get('email');
+        $student->save();
+        return redirect()->route('student.index')->with('success','Data Updated');
     }
 
     /**
