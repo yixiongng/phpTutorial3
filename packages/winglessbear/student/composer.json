@@ -1,0 +1,11 @@
+{
+    "name": "winglessbear/student",
+    "description": "you can CRU user",
+    "authors": [
+        {
+            "name": "Yi Xiong Ng",
+            "email": "yixiongng@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
