@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
-use App\Student;
+use Winglessbear\Student\Student;
 class HomeController extends Controller
 {
     /**

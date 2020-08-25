@@ -13,7 +13,7 @@ class StudentServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('winglessbear\student\StudentController');
+        //$this->app->make('winglessbear\student\StudentController');
     }
 
     /**
@@ -27,7 +27,7 @@ class StudentServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/migrations');
         $this->loadViewsFrom(__DIR__.'/views', 'student');
         $this->publishes([
-            __DIR__.'/views' => base_path('resources/views/winglessbear/student'),
+            __DIR__.'/views' => base_path('resources/views/winglessbear/student'),'student'
         ]);
     }
 }

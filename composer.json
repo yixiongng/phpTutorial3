@@ -30,13 +30,16 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [],
+            "providers": [
+                "Winglessbear\\Student\\StudentServiceProvider"
+            ]
         }
     },
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "WinglessBear\\Student\\": "packages/winglessbear/student/src/"
+            "Winglessbear\\Student\\": "packages/winglessbear/student/src/"
         },
         "classmap": [
             "database/seeds",
